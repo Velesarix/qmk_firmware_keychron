@@ -75,38 +75,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    if (host_keyboard_led_state().caps_lock) {
-        rgb_matrix_set_color(44, 255, 255, 255);
-    } else {
-        rgb_matrix_set_color(44, 255, 58, 128);
-    }
-
-    for (uint8_t i = led_min; i < led_max; i++) {
-        switch (i) {
-            case 0 ... 13:
-                rgb_matrix_set_color(i, 255, 50, 0);
-                break;
-            case 14 ... 28:
-                rgb_matrix_set_color(i, 255, 153, 33);
-                break;
-            case 29 ... 43:
-                rgb_matrix_set_color(i, 254, 219, 99);
-                break;
-            case 44 ... 57:
-                rgb_matrix_set_color(i, 255, 58, 128);
-                break;
-            case 58 ... 70:
-                rgb_matrix_set_color(i, 148, 47, 255);
-                break;
-            case 71 ... 80:
-                rgb_matrix_set_color(i, 148, 0, 255);
-                break;
-            default:
-                rgb_matrix_set_color(i, 0, 0, 255);
-                break;
-        }
-    }
-
-    return false;
-}
+// bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+//     return false;
+// }
